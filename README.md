@@ -8,6 +8,9 @@ Official ClawMama skills repository.
 - `job-search-consultant` — 求职指挥中心：职位管道、简历定制、面试准备、跟进邮件和每周复盘。
 - `ielts-writing-speaking-coach` — 雅思写作口语顾问：按 IELTS 标准做写作/口语反馈、错题记录、练习计划和复盘。
 - `minimum-viable-fitness-coach` — 最低可行健身顾问：为忙碌人群创建安全、现实、可持续的健身计划并修复漏练。
+- `iep-parent-navigator` — 特殊教育 IEP/504 家长导航：会议准备、评估报告整理、accommodation 跟踪和学校沟通草稿。
+- `aquarium-reef-tank-coach` — 鱼缸与海缸顾问：记录鱼缸配置、水质参数和维护历史，帮助做保守诊断和维护计划。
+- `cottage-food-compliance` — 家庭烘焙与手作食品合规：按地区、产品和销售渠道整理许可、标签、销售上限和验证问题。
 
 ## Install / use
 
@@ -18,4 +21,7 @@ npx skills use clawmama-run/clamama-skills@gaokao-volunteer-planner
 npx skills add clawmama-run/clamama-skills --skill job-search-consultant -y
 npx skills add clawmama-run/clamama-skills --skill ielts-writing-speaking-coach -y
 npx skills add clawmama-run/clamama-skills --skill minimum-viable-fitness-coach -y
+npx skills add clawmama-run/clamama-skills --skill iep-parent-navigator -y
+npx skills add clawmama-run/clamama-skills --skill aquarium-reef-tank-coach -y
+npx skills add clawmama-run/clamama-skills --skill cottage-food-compliance -y
 ```
