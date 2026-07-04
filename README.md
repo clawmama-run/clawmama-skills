@@ -4,7 +4,7 @@ Official ClawMama skills repository.
 
 ## Skills
 
-- `card-studio-social-cards` — 使用 ClawMama Card Studio 生成 OG、社交卡、小红书封面、公众号头图和动态分享图。
+- `card-studio-social-cards` — 自包含的社交卡片图生成器（tool/ 内置渲染引擎）：13 套模板 × 16 个平台尺寸，OG 分享图、小红书图文、抖音封面、日签、金句卡、==关键词==高亮、JSON 批量轮播。
 - `gaokao-volunteer-planner` — 高考志愿填报辅助决策：收集省份、分数、性别、家庭情况与偏好，生成院校、专业、城市、冲稳保匹配和最终报告。
 - `job-search-consultant` — 求职指挥中心：职位管道、简历定制、面试准备、跟进邮件和每周复盘。
 - `ielts-writing-speaking-coach` — 雅思写作口语顾问：按 IELTS 标准做写作/口语反馈、错题记录、练习计划和复盘。

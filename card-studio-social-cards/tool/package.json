@@ -1,0 +1,26 @@
+{
+  "name": "card-studio",
+  "version": "0.2.0",
+  "private": true,
+  "description": "Multi-platform social card and OG image generation system built on satori (standalone)",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "card-studio": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "fonts": "node scripts/fetch-fonts.mjs",
+    "cli": "tsx src/cli.ts",
+    "samples": "tsx src/samples.ts"
+  },
+  "dependencies": {
+    "@resvg/resvg-js": "^2.6.2",
+    "satori": "^0.12.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0"
+  }
+}
