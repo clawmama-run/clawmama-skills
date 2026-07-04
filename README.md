@@ -16,20 +16,20 @@ Official ClawMama skills repository.
 ## Install / use
 
 ```bash
-npx skills add clawmama-run/clamama-skills --skill gaokao-volunteer-planner -y
-npx skills use clawmama-run/clamama-skills@gaokao-volunteer-planner
+npx skills add clawmama-run/clawmama-skills --skill gaokao-volunteer-planner -y
+npx skills use clawmama-run/clawmama-skills@gaokao-volunteer-planner
 
-npx skills add clawmama-run/clamama-skills --skill job-search-consultant -y
-npx skills add clawmama-run/clamama-skills --skill ielts-writing-speaking-coach -y
-npx skills add clawmama-run/clamama-skills --skill minimum-viable-fitness-coach -y
-npx skills add clawmama-run/clamama-skills --skill iep-parent-navigator -y
-npx skills add clawmama-run/clamama-skills --skill aquarium-reef-tank-coach -y
-npx skills add clawmama-run/clamama-skills --skill cottage-food-compliance -y
+npx skills add clawmama-run/clawmama-skills --skill job-search-consultant -y
+npx skills add clawmama-run/clawmama-skills --skill ielts-writing-speaking-coach -y
+npx skills add clawmama-run/clawmama-skills --skill minimum-viable-fitness-coach -y
+npx skills add clawmama-run/clawmama-skills --skill iep-parent-navigator -y
+npx skills add clawmama-run/clawmama-skills --skill aquarium-reef-tank-coach -y
+npx skills add clawmama-run/clawmama-skills --skill cottage-food-compliance -y
 ```
 
 Card Studio:
 
 ```bash
-npx skills add clawmama-run/clamama-skills --skill card-studio-social-cards -y
-npx skills use clawmama-run/clamama-skills@card-studio-social-cards
+npx skills add clawmama-run/clawmama-skills --skill card-studio-social-cards -y
+npx skills use clawmama-run/clawmama-skills@card-studio-social-cards
 ```
