@@ -1,6 +1,0 @@
-dist/
-fonts/*.otf
-fonts/*.ttf
-node_modules/
-out/
-fonts/manifest.json

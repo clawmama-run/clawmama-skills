@@ -1,10 +1,11 @@
 # Card Studio — Spec Reference
 
-Render with the CLI in this skill's `tool/` directory:
+Render with the CLI from the card-studio checkout (see SKILL.md setup;
+`CARD_STUDIO_DIR` defaults to `~/.cache/card-studio`):
 
 ```bash
-node tool/dist/cli.js --data spec.json --out card.png       # single
-node tool/dist/cli.js --data specs.json --out-dir out/post  # array = batch
+node $CARD_STUDIO_DIR/dist/cli.js --data spec.json --out card.png       # single
+node $CARD_STUDIO_DIR/dist/cli.js --data specs.json --out-dir out/post  # array = batch
 ```
 
 ## Spec shape
@@ -69,7 +70,7 @@ node tool/dist/cli.js --data specs.json --out-dir out/post  # array = batch
 `swiss`(纸白+信号红) `carbon`(石墨终端) `sky`(浅青便签) `lemon`(奶油柠檬)
 `blush`(蔷薇粉) `cobalt`(克莱因蓝) `noir`(胶片黑+琥珀) `midnight`(霓虹粉×青)
 
-Each template declares compatible themes (`node tool/dist/cli.js list`);
+Each template declares compatible themes (`node $CARD_STUDIO_DIR/dist/cli.js list`);
 omit `theme` to use its default.
 
 ## Content model
@@ -158,7 +159,7 @@ the markers safely.
 ## Programmatic API
 
 ```ts
-import { renderCard } from './tool/dist/index.js';
+import { renderCard } from '<CARD_STUDIO_DIR>/dist/index.js';
 const png: Buffer = await renderCard({ template: 'ember', preset: 'og', content: { title: '…' } });
 ```
 

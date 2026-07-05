@@ -10,32 +10,36 @@ metadata:
 
 # Card Studio — 社交卡片图生成
 
-Self-contained card renderer (satori + resvg, no headless browser) living in
-`tool/` inside this skill. 13 templates × 16 platform sizes × 12 themes,
-CJK-aware typography, `==keyword==` highlighting, emoji stickers, JSON-driven
-batch rendering for carousels.
+Card renderer (satori + resvg, no headless browser) from the standalone
+repository **github.com/clawmama-run/card-studio** (single source of truth).
+13 templates × 16 platform sizes × 12 themes, CJK-aware typography,
+`==keyword==` highlighting, emoji stickers, JSON-driven batch rendering.
 
 ## One-time setup
 
-Everything lives in this skill's `tool/` directory — no other repo needed.
-Run once if `tool/dist/cli.js` or `tool/fonts/manifest.json` is missing:
+Clone (or update) the renderer, then build once. Skip when
+`$CARD_STUDIO_DIR/dist/cli.js` and `$CARD_STUDIO_DIR/fonts/manifest.json`
+already exist:
 
 ```bash
-cd <this-skill-dir>/tool
+CARD_STUDIO_DIR="${CARD_STUDIO_DIR:-$HOME/.cache/card-studio}"
+git clone https://github.com/clawmama-run/card-studio "$CARD_STUDIO_DIR" 2>/dev/null   || git -C "$CARD_STUDIO_DIR" pull --ff-only
+cd "$CARD_STUDIO_DIR"
 npm install          # satori + resvg (~30s)
 npm run build        # tsc → dist/
 npm run fonts        # downloads TTFs from Google Fonts (~60 MB, once)
 ```
 
-Font download and emoji stickers need outbound network; if fonts fail to
-download, report it instead of retrying repeatedly.
+The repository is private — the environment needs GitHub access (gh auth or
+ssh). Font download and emoji stickers need outbound network. If clone or
+fonts fail, report it instead of retrying repeatedly.
 
 ## Rendering
 
 Primary workflow — write a JSON spec, render, send the PNG back to the user:
 
 ```bash
-CLI="node <this-skill-dir>/tool/dist/cli.js"
+CLI="node $CARD_STUDIO_DIR/dist/cli.js"
 cat > /tmp/card.json << 'EOF'
 {
   "template": "note",

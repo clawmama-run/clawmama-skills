@@ -1,0 +1,74 @@
+[
+  {
+    "family": "Inter",
+    "weight": 400,
+    "style": "normal",
+    "file": "Inter-400.ttf"
+  },
+  {
+    "family": "Inter",
+    "weight": 600,
+    "style": "normal",
+    "file": "Inter-600.ttf"
+  },
+  {
+    "family": "Inter",
+    "weight": 800,
+    "style": "normal",
+    "file": "Inter-800.ttf"
+  },
+  {
+    "family": "Fraunces",
+    "weight": 500,
+    "style": "normal",
+    "file": "Fraunces-500.ttf"
+  },
+  {
+    "family": "Fraunces",
+    "weight": 700,
+    "style": "normal",
+    "file": "Fraunces-700.ttf"
+  },
+  {
+    "family": "JetBrains Mono",
+    "weight": 400,
+    "style": "normal",
+    "file": "JetBrainsMono-400.ttf"
+  },
+  {
+    "family": "JetBrains Mono",
+    "weight": 700,
+    "style": "normal",
+    "file": "JetBrainsMono-700.ttf"
+  },
+  {
+    "family": "Noto Sans SC",
+    "weight": 400,
+    "style": "normal",
+    "file": "NotoSansSC-400.ttf"
+  },
+  {
+    "family": "Noto Sans SC",
+    "weight": 700,
+    "style": "normal",
+    "file": "NotoSansSC-700.ttf"
+  },
+  {
+    "family": "Noto Sans SC",
+    "weight": 900,
+    "style": "normal",
+    "file": "NotoSansSC-900.ttf"
+  },
+  {
+    "family": "Noto Serif SC",
+    "weight": 500,
+    "style": "normal",
+    "file": "NotoSerifSC-500.ttf"
+  },
+  {
+    "family": "Noto Serif SC",
+    "weight": 900,
+    "style": "normal",
+    "file": "NotoSerifSC-900.ttf"
+  }
+]
