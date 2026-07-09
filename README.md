@@ -11,6 +11,7 @@ Official ClawMama skills repository.
 - `iep-parent-navigator` — 特殊教育 IEP/504 家长导航：会议准备、评估报告整理、accommodation 跟踪和学校沟通草稿。
 - `aquarium-reef-tank-coach` — 鱼缸与海缸顾问：记录鱼缸配置、水质参数和维护历史，帮助做保守诊断和维护计划。
 - `cottage-food-compliance` — 家庭烘焙与手作食品合规：按地区、产品和销售渠道整理许可、标签、销售上限和验证问题。
+- `exploreyc-startup-research` — Startup/公司情报研究：基于 ExploreYC API 搜索和分析 YC/a16z portfolio 公司、生成赛道与公司简报，并支持用导出数据建本地数据库做深入分析。
 
 ## Install / use
 
@@ -24,7 +25,5 @@ npx skills add clawmama-run/clawmama-skills --skill minimum-viable-fitness-coach
 npx skills add clawmama-run/clawmama-skills --skill iep-parent-navigator -y
 npx skills add clawmama-run/clawmama-skills --skill aquarium-reef-tank-coach -y
 npx skills add clawmama-run/clawmama-skills --skill cottage-food-compliance -y
-```
-
-```bash
+npx skills add clawmama-run/clawmama-skills --skill exploreyc-startup-research -y
 ```
