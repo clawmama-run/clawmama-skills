@@ -13,6 +13,7 @@ Official ClawMama skills repository.
 - `cottage-food-compliance` — 家庭烘焙与手作食品合规：按地区、产品和销售渠道整理许可、标签、销售上限和验证问题。
 - `exploreyc-startup-research` — Startup/公司情报研究：基于 ExploreYC API 搜索和分析 YC/a16z portfolio 公司、生成赛道与公司简报，并支持用导出数据建本地数据库做深入分析。
 - `edge-tts-text-to-speech` — 免费语音生成：使用 edge-tts 把多语言文本生成 MP3/SRT，选择在线音色并调节语速、音量和音高。
+- `uspto-patent-trademark-research` — 美国专利与联邦商标研究：通过 patent_mcp_server 检索 USPTO 专利和联邦商标记录，整理状态、分类、文档和权利转让证据，并明确法律与数据覆盖边界。
 
 ## Install / use
 
@@ -28,4 +29,5 @@ npx skills add clawmama-run/clawmama-skills --skill aquarium-reef-tank-coach -y
 npx skills add clawmama-run/clawmama-skills --skill cottage-food-compliance -y
 npx skills add clawmama-run/clawmama-skills --skill exploreyc-startup-research -y
 npx skills add clawmama-run/clawmama-skills --skill edge-tts-text-to-speech -y
+npx skills add clawmama-run/clawmama-skills --skill uspto-patent-trademark-research -y
 ```
