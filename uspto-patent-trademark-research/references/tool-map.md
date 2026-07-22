@@ -79,6 +79,8 @@ Do not choose these as the primary path unless the MCP reports they have become 
 
 When one returns `API_UNAVAILABLE`, preserve the message and follow its suggested replacement. Do not turn an unavailable response into an empty-result claim.
 
+PTAB tools concern patents. They do not search Trademark Trial and Appeal Board (TTAB) disputes. The upstream server does not expose a comprehensive TTAB search API.
+
 ## Coverage statement for reports
 
 Use wording like:

@@ -21,7 +21,7 @@ This Skill can help with:
 - searching USPTO federal trademark records by wording, owner, goods/services, class, or live/dead status;
 - checking trademark classes and USPTO status codes;
 - retrieving authoritative TSDR status, documents, and images when a TSDR key is configured;
-- reviewing recorded trademark assignments and ownership history;
+- reviewing USPTO-recorded trademark assignment and recordation history;
 - preparing a cited research brief and a focused question list for a U.S. attorney.
 
 This Skill does **not** provide:
@@ -37,6 +37,7 @@ This Skill does **not** provide:
 The Catalog Agent installs a pinned copy automatically. For manual installation, keep it isolated:
 
 ```bash
+python3 -c 'import sys; assert (3, 10) <= sys.version_info < (3, 14), "Python 3.10-3.13 required"'
 VERSION_SHA="67ff3136491a52637ef97dd0093b10542f488097"
 VENV="$HOME/.local/share/clawmama/patent-mcp-server-$VERSION_SHA"
 python3 -m venv "$VENV"
@@ -63,19 +64,17 @@ The server has useful no-key search paths, but some authoritative tools need sep
 
 - `USPTO_API_KEY`: USPTO Open Data Portal and PTAB tools.
 - `TSDR_API_KEY`: authoritative trademark status, documents, and images.
-- `TMSEARCH_WAF_TOKEN`: optional short-lived browser token only if USPTO trademark search is blocked by AWS WAF.
+- `TMSEARCH_WAF_TOKEN`: an optional short-lived token from the user's own authorized USPTO browser session, only when permitted and necessary. Never obtain, share, or reuse another person's token, bypass a challenge, or automate around an access-control decision.
 
-Hermes filters the environment inherited by MCP subprocesses. Pass only the credentials this MCP needs:
+The Catalog does not collect or embed user credentials. Add optional USPTO credentials only as a user-side post-install step using a private terminal and the current Hermes credential/configuration workflow. Hermes MCP configuration may persist environment values in the user's local Hermes configuration, so inspect its location and permissions before entering a secret. Never enter secrets in shared shells, recordings, tickets, reports, prompts, source files, or public content. Do not register empty values; rotate or remove stale credentials promptly.
+
+After configuring credentials, run:
 
 ```bash
-hermes mcp remove uspto-research
-printf 'y\n' | hermes mcp add uspto-research \
-  --command "$HOME/.local/bin/patent-mcp-server" \
-  --env "USPTO_API_KEY=$USPTO_API_KEY" "TSDR_API_KEY=$TSDR_API_KEY"
 hermes mcp test uspto-research
 ```
 
-Never paste API keys into reports, prompts, source files, or public content.
+If USPTO rejects automated access, stop or retry later and use an authorized public alternative. Respect USPTO terms, rate limits, and automated-access policies.
 
 ## Tool selection
 
@@ -88,7 +87,7 @@ See `references/tool-map.md` for the full decision map. Prefer active tools and 
 3. Search exact wording, close spelling variants, spacing variants, and meaningful shared terms separately.
 4. Filter by live/dead status when useful, but do not discard dead records without explaining why.
 5. Use `tm_get_trademark` for a selected record.
-6. Use `tsdr_get_trademark_status` and TSDR document tools when authoritative current status matters and `TSDR_API_KEY` is configured.
+6. Use `tsdr_get_trademark_status` and TSDR document tools when the official USPTO record retrieved at the stated time matters and `TSDR_API_KEY` is configured.
 7. Use `tm_search_assignments` to inspect recorded ownership changes.
 8. Compare wording, sound, appearance, commercial impression, goods/services, classes, owner, and status without declaring legal confusion.
 
@@ -129,7 +128,7 @@ For trademark work, explicitly state that USPTO federal results do not cover sta
 
 ## Failure handling
 
-- If `tm_search_trademarks` returns WAF or transient errors, report the failure and suggest retrying later or configuring a current `TMSEARCH_WAF_TOKEN`; do not fabricate results.
+- If `tm_search_trademarks` returns WAF or transient errors, report the failure and retry later or use an authorized public alternative. Only consider a current `TMSEARCH_WAF_TOKEN` from the user's own authorized session when permitted; never bypass a challenge or access-control decision.
 - If an ODP/PTAB tool returns 403, check whether `USPTO_API_KEY` is configured for the MCP subprocess.
 - If a TSDR tool returns 401/404, confirm that the key is specifically authorized for TSDR; an ODP key may not work.
 - If a tool returns `API_UNAVAILABLE`, switch to the replacement named in `references/tool-map.md` or mark the requested data unavailable.
@@ -137,6 +136,9 @@ For trademark work, explicitly state that USPTO federal results do not cover sta
 
 ## Safety and professional boundary
 
+- Do not submit an unpublished invention's full claims, core formula, source code, customer secrets, or NDA-protected details as search terms. Abstract sensitive concepts first; for high-value confidential material, confirm the data-handling environment and consult patent counsel before searching.
+- USPTO assignment recordation does not by itself establish transaction validity, a complete chain of title, or current beneficial ownership.
+- PTAB is a patent tribunal and does not cover TTAB trademark disputes. This MCP does not provide a comprehensive TTAB search.
 - Do not present search results as a legal clearance opinion, registration prediction, patentability opinion, infringement determination, or freedom-to-operate opinion.
 - Do not claim comprehensive coverage when state, common-law, copyright, litigation, TTAB, marketplace, or non-U.S. sources were not searched.
 - Do not infer ownership solely from a search-result card; inspect current status and assignment evidence when relevant.

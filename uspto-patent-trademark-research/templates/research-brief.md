@@ -13,7 +13,7 @@
 
 - Search date:
 - USPTO sources/tools used:
-- Credentials available:
+- Credential capability used (record only `ODP configured`, `TSDR configured`, or `no key`; never record a value or token fragment):
 - Sources not searched:
 - This brief is research, not legal advice.
 
